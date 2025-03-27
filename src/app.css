@@ -1,0 +1,109 @@
+.page {
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #555;
+}
+
+.location-input {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 400px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.location-text {
+    border: none;
+    outline: none;
+    margin-left: 8px;
+    font-size: 14px;
+    background: none;
+}
+
+.search-bar {
+    padding: 8px 12px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 600px;
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.or-divider {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #555;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 80px; /* Space for nav */
+}
+
+.category-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    width: 120px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.category-icon {
+    font-size: 36px;
+}
+
+.category-label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ccc;
+}
+
+.nav-icon {
+    font-size: 24px;
+    cursor: pointer;
+    width: 25vw;
+}
