@@ -22,7 +22,12 @@ const CarOil = () => {
                     </div>
                 </div>
             </div>
-            <Stack flexDirection="col" justifyContent="center" alignItems="center">
+            <Stack
+                flexDirection="col"
+                justifyContent="center"
+                alignItems="center"
+                style={{ marginBottom: "50px" }}
+            >
                 <Typography>Nearby Disposal Areas</Typography>
                 <StaticMapWithMarkers />
             </Stack>
