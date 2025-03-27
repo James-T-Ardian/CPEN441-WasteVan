@@ -21,12 +21,12 @@ const Batteries = () => {
                         <div className="category-label">Hazardous Item: Do not dispose in bin</div>
                     </div>
                 </div>
-                <Stack flexDirection="col" justifyContent="center" alignItems="center">
-                    <Typography>Nearby Disposal Areas</Typography>
-                    <StaticMapWithMarkers />
-                </Stack>
-                <Nav />
             </div>
+            <Stack flexDirection="col" justifyContent="center" alignItems="center">
+                <Typography>Nearby Disposal Areas</Typography>
+                <StaticMapWithMarkers />
+            </Stack>
+            <Nav />
         </div>
     );
 };
