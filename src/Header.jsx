@@ -2,15 +2,39 @@ import { Autocomplete, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const options = [
+    "Aluminum can",
+    "Batteries",
+    "Broken glass",
+    "Cardboard boxes",
+    "Car oil",
+    "Cooking oil",
+    "Electronics (e-waste)",
+    "Expired medications",
+    "Food scraps",
+    "Garden waste (leaves, branches)",
+    "Light bulbs",
+    "Mattress",
+    "Old clothes",
+    "Old newspapers",
+    "Old shoes",
+    "Paint cans",
+    "Plastic water bottle",
+    "Styrofoam packaging",
+    "Tea bags",
+    "Used tissues",
+];
+
 const Header = () => {
     const [searchedItem, setSearchedItem] = useState("");
+    const [inputValue, setInputValue] = useState("");
     const navigate = useNavigate();
 
     const navigateToWIPPage = () => {
         navigate("/work-in-progress");
     };
 
-    const navigateBasedOnSearchedItem = () => {
+    const navigateBasedOnSearchedItem = (searchedItem) => {
         if (searchedItem === "Mattress") {
             navigate(`/mattress`);
         } else if (searchedItem === "Tea bags") {
@@ -46,42 +70,29 @@ const Header = () => {
                 <Autocomplete
                     className="search-bar"
                     disablePortal
+                    inputValue={inputValue}
                     onChange={(e, newValue) => {
                         setSearchedItem(newValue ?? "");
                     }}
+                    onInputChange={(e, newInputValue) => setInputValue(newInputValue)}
                     onKeyDown={(e) => {
                         if (e.key === "Enter") {
-                            navigateBasedOnSearchedItem();
+                            e.preventDefault(); // prevent default form submit
+                            const matchedOption = options.find(
+                                (opt) => opt.toLowerCase() === inputValue.toLowerCase()
+                            );
+
+                            if (matchedOption && inputValue)
+                                navigateBasedOnSearchedItem(matchedOption);
                         }
                     }}
-                    options={[
-                        "Aluminum can",
-                        "Batteries",
-                        "Broken glass",
-                        "Cardboard boxes",
-                        "Car oil",
-                        "Cooking oil",
-                        "Electronics (e-waste)",
-                        "Expired medications",
-                        "Food scraps",
-                        "Garden waste (leaves, branches)",
-                        "Light bulbs",
-                        "Mattress",
-                        "Old clothes",
-                        "Old newspapers",
-                        "Old shoes",
-                        "Paint cans",
-                        "Plastic water bottle",
-                        "Styrofoam packaging",
-                        "Tea bags",
-                        "Used tissues",
-                    ]}
+                    options={options}
                     renderInput={(params) => (
                         <>
                             <TextField {...params} label="" variant="standard" />
                             <button
                                 onClick={() => {
-                                    navigateBasedOnSearchedItem();
+                                    navigateBasedOnSearchedItem(searchedItem);
                                 }}
                                 className="search-button"
                             >
