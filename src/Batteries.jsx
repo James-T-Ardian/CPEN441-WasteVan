@@ -16,8 +16,6 @@ const Batteries = () => {
                     <div className="category-label">Batteries</div>
                     <div className="category-icon">☠️</div>
                     <div>
-                        Dispose in compost
-                        <div />
                         <div className="category-label">Hazardous Item: Do not dispose in bin</div>
                     </div>
                 </div>
